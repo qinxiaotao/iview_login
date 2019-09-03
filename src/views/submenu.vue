@@ -7,9 +7,9 @@
                                         <Icon type="ios-navigate"></Icon>
                                         Item 1
                                     </template>
-                                    <MenuItem name="1-1">Option 1</MenuItem>
-                                    <MenuItem name="1-2">Option 2</MenuItem>
-                                    <MenuItem name="1-3">Option 3</MenuItem>
+                                    <MenuItem name="1-1" to="/home/submenu/test">测试1</MenuItem>
+                                    <MenuItem name="1-2" to="/home/submenu/upload">上传</MenuItem>
+                                    <MenuItem name="1-3" to="/home/submenu/download">下载</MenuItem>
                                 </Submenu>
                                 <Submenu name="2">
                                     <template slot="title">
@@ -30,7 +30,7 @@
                             </Menu>
                         </Sider>
                         <Content :style="{padding: '24px', minHeight: '280px', background: '#fff'}">
-                            Content
+                            <router-view></router-view>
                          </Content>
                      </Layout>
 </template>

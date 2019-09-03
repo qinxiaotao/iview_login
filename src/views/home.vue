@@ -67,8 +67,9 @@
             <Layout :style="{padding: '0 10px'}">
                 <Breadcrumb :style="{margin: '12px 0'}">
                     <BreadcrumbItem>Home</BreadcrumbItem>
-                    <BreadcrumbItem>Components</BreadcrumbItem>
-                    <BreadcrumbItem>Layout</BreadcrumbItem>
+                    <BreadcrumbItem>{{component}}</BreadcrumbItem>
+                    <BreadcrumbItem v-if="Layout">{{Layout}}</BreadcrumbItem>
+
                 </Breadcrumb>
                 <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
                    <router-view></router-view>
@@ -90,6 +91,9 @@
     data:function(){
       return {
              activename:"1",
+             component:'',
+             Layout:'',
+
       }
     },
 	
@@ -99,9 +103,20 @@
         		this.$router.replace('login')
         	}
         },
+        beforeUpdate:function(){
+		      var breadCrumb = this.$route.path.split('/');
+              this.component = breadCrumb[2];
+              if (breadCrumb[3]){
+                  this.Layout = breadCrumb[3];
+              }else{
+                  this.Layout = '';
+              }
+
+        },
         created:function(){
-              console.log(this.activename);
-              console.log(this.$route.path)
+           /*   console.log(this.activename);
+              console.log(this.$route.path)*/
+
               if (this.$route.path == '/home/submenu'){
                      this.activename = "1";
               }else if (this.$route.path == '/home/fixedMenu'){

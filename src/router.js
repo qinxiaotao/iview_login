@@ -18,11 +18,27 @@ const routers = [
         children:[
             {
               path:'fixedMenu',
-              component:(resolve)=>require(['./views/fixedMenu.vue'],resolve)
+              component:(resolve)=>require(['./views/fixedMenu.vue'],resolve),
+
             },
             {
                path:'submenu',
-               component:(resolve)=>require(['./views/submenu.vue'],resolve)
+               component:(resolve)=>require(['./views/submenu.vue'],resolve),
+                children:[
+                    {
+                        path:'test',
+                        component:(resolve)=>require(['./views/submenuChild/test.vue'],resolve),
+                    },
+                    {
+                      path:'upload',
+                      component:(resolve)=>require(['./views/submenuChild/upload.vue'],resolve),
+                    },
+                    {
+                        path:'download',
+                        component:(resolve)=>require(['./views/submenuChild/download.vue'],resolve),
+                    }
+
+                ]
             }
         ]
     }
