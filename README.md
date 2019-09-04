@@ -27,11 +27,6 @@ This project is build for vue iview3 ,webpack2 vue-router vue-cookies axios
 2 logout 登出
 3 axios初始化设置，使用axios传递数据 
 4 建立基础模板
-
-#问题
-1 this.$http打印后是个函数为什么
-2   margin: 0 auto; 0 ，auto是什么意思
-  margin-right: 20px; ，margin-right代替float?
-
+5 建立上传,下载模板
 
 
