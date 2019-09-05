@@ -22,6 +22,10 @@ const routers = [
 
             },
             {
+              path:'osInstall',
+              component:(resolve)=>require(['./views/osInstall.vue'],resolve),
+            },
+            {
                path:'submenu',
                component:(resolve)=>require(['./views/submenu.vue'],resolve),
                 children:[

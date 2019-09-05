@@ -47,9 +47,9 @@
                             <Icon type="ios-keypad"></Icon>
                             fixedMenu
                         </MenuItem>
-                        <MenuItem name="3">
+                        <MenuItem name="osInstall" to="/home/osInstall">
                             <Icon type="ios-analytics"></Icon>
-                            Item 3
+                            装机
                         </MenuItem>
                          <MenuItem name="5">
                             <Icon type="ios-analytics"></Icon>
