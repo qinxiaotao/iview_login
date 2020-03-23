@@ -39,23 +39,15 @@
                <Menu mode="horizontal" theme="dark" :active-name="activename">
                     <div class="layout-logo"></div>
                     <div class="layout-nav">
-                        <MenuItem name="1"  to="/home/submenu">
+                        <MenuItem name="1"  to="">
                             <Icon type="ios-navigate"></Icon>
-                            submenu
+                            menu1
                         </MenuItem>
-                        <MenuItem name="2" to='/home/fixedMenu'>
+                        <MenuItem name="2" to=''>
                             <Icon type="ios-keypad"></Icon>
-                            fixedMenu
+                            menu2
                         </MenuItem>
-                        <MenuItem name="osInstall" to="/home/osInstall">
-                            <Icon type="ios-analytics"></Icon>
-                            装机
-                        </MenuItem>
-                         <MenuItem name="5">
-                            <Icon type="ios-analytics"></Icon>
-                            Item 5
-                        </MenuItem>
-                          <MenuItem name="4">
+                        <MenuItem>
                           <Button @click="logout">logout</Button>
                         </MenuItem>
                      
@@ -67,9 +59,6 @@
             <Layout :style="{padding: '0 10px'}">
                 <Breadcrumb :style="{margin: '12px 0'}">
                     <BreadcrumbItem>Home</BreadcrumbItem>
-                    <BreadcrumbItem>{{component}}</BreadcrumbItem>
-                    <BreadcrumbItem v-if="Layout">{{Layout}}</BreadcrumbItem>
-
                 </Breadcrumb>
                 <Content :style="{padding: '24px 0', minHeight: '280px', background: '#fff'}">
                    <router-view></router-view>
@@ -103,26 +92,8 @@
         		this.$router.replace('login')
         	}
         },
-        beforeUpdate:function(){
-		      var breadCrumb = this.$route.path.split('/');
-              this.component = breadCrumb[2];
-              if (breadCrumb[3]){
-                  this.Layout = breadCrumb[3];
-              }else{
-                  this.Layout = '';
-              }
 
-        },
-        created:function(){
-           /*   console.log(this.activename);
-              console.log(this.$route.path)*/
 
-              if (this.$route.path == '/home/submenu'){
-                     this.activename = "1";
-              }else if (this.$route.path == '/home/fixedMenu'){
-                    this.activename = "2";
-              }
-        }
     
 	}
 </script>

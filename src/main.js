@@ -28,9 +28,7 @@ const store = new Vuex.Store({
 })
 
 
-/*var s;
-console.log(sessionidValue);
-console.log(s);*/
+
 // 路由配置
 const RouterConfig = {
     mode: 'history',

@@ -5,7 +5,7 @@ This project is build for Vue.js 2 + vue-router + webpack2 + iView 3, just insta
 ## Install
 ```bush
 // install dependencies
-npm install
+npm install  --registry https://registry.npm.taobao.org
 ```
 ## Run
 ### Development
