@@ -81,7 +81,7 @@
                   this.$http.post('/login',this.loginData)
                     .then((res)=>{
                         let expireDays = 30 * 1 * 1 ;
-                        this.$cookies.set('sessionid', '1111',expireDays);
+                        this.$cookies.set('sessionid',res.data.session,,expireDays);
                         this.$router.replace('/home');
                     }).catch((err)=>{
                          this.$Message.error('密码错误');
